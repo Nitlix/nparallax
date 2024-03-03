@@ -1,0 +1,18 @@
+{
+    "name": "nparallax",
+    "version": "1.0.1",
+    "description": "🔥 Superpower your apps with Parallax.",
+    "main": "./dist/exports.js",
+    "keywords": [
+        "parallax",
+        "react",
+        "js",
+        "frontend"
+    ],
+    "author": "NITLIX HOLDINGS LTD.",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/react": "^18.2.37",
+        "react": "^18.2.0"
+    }
+}
