@@ -12,7 +12,10 @@ export class NParallax {
     }
 
     //listeners list
-    bingings: Array<EventListener> = [];
+    bingings: Array<{
+        listener: EventListener,
+        object: HTMLElement
+    }> = []
 
 
     bindObject = function(this: NParallax, bindingData: BindingData) {
@@ -26,7 +29,10 @@ export class NParallax {
         }
 
         window.addEventListener("scroll", render);
-        this.bingings.push(render);
+        this.bingings.push({
+            listener: render,
+            object: object
+        })
         render()
 
         
@@ -44,10 +50,7 @@ export class NParallax {
         //get distance from origin
         let distance = scroll - parseInt(origin);
         let move = distance * speed;
-
-        //change the move to 0 if the window size is mobile
-        if (window.innerWidth < 800) move = 0;
-
+        
         //calculate
         //use matrix3d to prevent lag
 
@@ -85,7 +88,10 @@ export class NParallax {
     }
 
     destroy = function(this: NParallax) {
-        this.bingings.forEach((listener) => window.removeEventListener("scroll", listener));
+        this.bingings.forEach((binding) => {
+            window.removeEventListener("scroll", binding.listener);
+            binding.object.style.transform = "";
+        });
         this.bingings = [];
     }
 }
