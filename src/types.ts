@@ -5,6 +5,7 @@ export type Defaults = {
     speed?: number,
     offset?: number,
     transition?: string,
+    both?: boolean
 }
 
-export type BindingData = { object: HTMLElement, action: string, speed: number, offset: number, transition: string }
+export type BindingData = { object: HTMLElement, action: string, speed: number, offset: number, transition: string, both: boolean }

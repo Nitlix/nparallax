@@ -1,6 +1,6 @@
 {
     "name": "nparallax",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "🔥 Superpower your apps with Parallax.",
     "main": "./dist/exports.js",
     "keywords": [
